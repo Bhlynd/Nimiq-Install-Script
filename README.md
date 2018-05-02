@@ -20,7 +20,9 @@ When the WLS installation is complete and user created with sudo access, **login
 The script can be started by running the below command.
 
 bash -c "$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
- or 
+
+or 
+
 bash -c "$(wget -O - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
 
 Please note, during the installation process the script will request you to enter settings for the client and to run escalated priviliges (sudo).
