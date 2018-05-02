@@ -12,9 +12,7 @@ https://www.howtoforge.com/tutorial/sudo-beginners-guide/
 
 When the installation is complete and user created with sudo access, change to this user and download this script.
 
-wget script
-
-Run the script as per below.
+Download the script and run the script as per below.
 
 bash nimiq-client-install.sh
 
