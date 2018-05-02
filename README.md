@@ -15,26 +15,35 @@ https://www.howtoforge.com/tutorial/sudo-beginners-guide/
 
 ## How-to
 
-When the installation is complete and user created with sudo access, **change to the new user** and download this script.
+When the WLS installation is complete and user created with sudo access, **login as the new user**.
 
-Run the script as per below.
+The script can be started by running the below command.
 
-**bash nimiq-client-install.sh**
+bash -c "$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
+ or 
+bash -c "$(wget -O - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
 
-The script will ask you to enter details for the client. You will be required to sudo which means entering your user password. 
+Please note, during the installation process the script will request you to enter settings for the client and to run escalated priviliges (sudo).
 
 **DO NOT RUN THIS AS ROOT**
 
-When complete, **change to the core directory**.
-
-Start the Nimiq mining client by typing **./start**.
+When complete, you can start the Nimiq mining client by typing **./start**.
 
 If you need to change any settings, you can do this by editing the start file.
 
 Have fun :)
 
-## Donation
+## Credits
 
-If this script was useful please make a donation to the below address.
+@ryan-rowland
 
-NQ84 GF4Y PJJQ S92K 3S9L 39N1 V2QE 76EJ 0635
+## Donations
+
+If this script was useful please make a donation to the below addresses.
+
+@Bhlynd NQ84 GF4Y PJJQ S92K 3S9L 39N1 V2QE 76EJ 0635
+@ryan-rowland NQ35 C04J 3NDF QV2A FHK1 F15U XSFM DAJP DHAV
+
+## License
+
+MIT License
