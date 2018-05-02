@@ -21,7 +21,7 @@ displayErr() {
     output "You will find examples in the brackets."
     output " "
     read -e -p "Enter the pool URL: " -i "pool.bhlynd.nz:8444" POOL
-    read -e -p "Enter the miner CPU threads: " -i "4" THREADS
+    read -e -p "Enter the miner CPU threads: " -i $(getconf _NPROCESSORS_ONLN) THREADS
     read -e -p "Enter your wallet address: " WALLET
     read -e -p "Enter device name: " EXTRADATA
     read -e -p "Enter statistics interval in seconds: " -i "10000" STATISTICS
