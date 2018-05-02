@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Author:  Bhlynd 
+# Author:  Bhlynd
 # Program: Install Nimiq on Ubuntu
 ################################################################################
 output() {
@@ -20,14 +20,14 @@ displayErr() {
     output "Make sure you double check before hitting enter! Only one shot at these!"
     output "You will find examples in the brackets."
     output " "
-    read -e -p "Enter the pool (pool.bhlynd.nz:8444) : " POOL
-    read -e -p "Enter the miner threads (4) : " THREADS
-    read -e -p "Enter your wallet address (NQ84 GF4Y PJJQ S92K 3S9L 39N1 V2QE 76EJ 0635) : " WALLET
-    read -e -p "Enter device name (Tardis1) : " EXTRADATA
-    read -e -p "Enter statistics interval (in seconds) : " STATISTICS
+    read -e -p "Enter the pool URL: " -i "pool.bhlynd.nz:8444" POOL
+    read -e -p "Enter the miner CPU threads: " -i "4" THREADS
+    read -e -p "Enter your wallet address: " WALLET
+    read -e -p "Enter device name: " EXTRADATA
+    read -e -p "Enter statistics interval in seconds: " -i "10000" STATISTICS
     
     output " "
-    output "Making sure everything is upto date."
+    output "Making sure everything is up to date."
     output " "
     sleep 3
     
@@ -44,7 +44,7 @@ displayErr() {
     curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - 
     
     output " "
-    output "Installing required dependancies."
+    output "Installing required dependencies."
     output " "
     sleep 3
     
@@ -72,18 +72,18 @@ displayErr() {
     output " "
     sleep 3
 
+    cd ..
     echo '#!/bin/bash
-    SCRIPT_PATH=$(dirname "$0")
+    SCRIPT_PATH=$(dirname "$0")/core
     $SCRIPT_PATH/clients/nodejs/nimiq "$@"' > miner
     chmod u+x miner
  
     echo '#!/bin/bash
-    ./miner --dumb --pool='"${POOL}"' --miner='"${THREADS}"' --wallet-address="'"${WALLET}"'" --extra-data="'"${EXTRADATA}"'" --statistics='"${STATISTICS}"'' > start
+    UV_THREADPOOL_SIZE='"${THREADS}"' ./miner --dumb --pool='"${POOL}"' --miner='"${THREADS}"' --wallet-address="'"${WALLET}"'" --extra-data="'"${EXTRADATA}"'" --statistics='"${STATISTICS}"'' > start
     chmod u+x start
 
     output " "
-    output "You can start the miner by changing directory to core and then typing ./start"
-    output "If you need to change any settings you can do this within the file named start."
+    output "You can start the miner by typing ./start"
+    output "If you need to change any settings, you can do so inside the ./start file."
     output " "
     sleep 3
-
