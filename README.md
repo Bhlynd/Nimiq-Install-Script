@@ -13,7 +13,7 @@ Follow the below guide and create a user with sudo access.
 
 https://www.howtoforge.com/tutorial/sudo-beginners-guide/
 
-## Howto
+## How-to
 
 When the installation is complete and user created with sudo access, **change to the new user** and download this script.
 
@@ -21,7 +21,7 @@ Run the script as per below.
 
 **bash nimiq-client-install.sh**
 
-The scrypt will ask you to enter detials for the client. You will be required to sudo which means entering your user password. 
+The script will ask you to enter details for the client. You will be required to sudo which means entering your user password. 
 
 **DO NOT RUN THIS AS ROOT**
 
