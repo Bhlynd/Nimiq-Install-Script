@@ -89,6 +89,6 @@ displayErr() {
     output "OR"
     output ""
     output "Run the below command to automate the process of editing the start file."
-    output "bash -c "'"$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"'""
+    output "bash -c "'"$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-reconfigure.sh)"'""
     output " "
 	sleep 3

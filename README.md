@@ -36,7 +36,7 @@ OR
 
 Run the below command to automate the process of editing the start file.
 
-bash -c "$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
+bash -c "$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-reconfigure.sh)"
 
 Have fun :)
 
