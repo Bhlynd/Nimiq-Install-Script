@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################################
 # Author:  Bhlynd
-# Program: Install Nimiq on Ubuntu
+# Program: Reconfigure Nimiq on Ubuntu
 ################################################################################
 output() {
     printf "\E[0;33;40m"
@@ -27,57 +27,10 @@ displayErr() {
     read -e -p "Enter statistics interval in seconds: " -i "10000" STATISTICS
     
     output " "
-    output "Making sure everything is up to date."
-    output " "
-    sleep 3
-    
-    
-    sudo apt-get -y update 
-    sudo apt-get -y upgrade
-    sudo apt-get -y autoremove
-    
-    output " "
-    output "Adding nodejs sources."
-    output " "
-    sleep 3
-    
-    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - 
-    
-    output " "
-    output "Installing required dependencies."
-    output " "
-    sleep 3
-    
-    sudo apt-get install -y git build-essential nodejs unzip
-	
-    output " "
-    output "Downloading Nimiq core."
+    output "Building launch script."
     output " "
     sleep 3
 
-    git clone https://github.com/nimiq-network/core.git
-
-    output " "
-    output "Building Nimiq core client."
-    output " "
-    sleep 3
-
-    cd core
-    sudo npm install -g gulp
-    npm install
-    gulp build-node
-
-    output " "
-    output "Building launch scripts."
-    output " "
-    sleep 3
-
-    cd ..
-    echo '#!/bin/bash
-    SCRIPT_PATH=$(dirname "$0")/core
-    $SCRIPT_PATH/clients/nodejs/nimiq "$@"' > miner
-    chmod u+x miner
- 
     echo '#!/bin/bash
     UV_THREADPOOL_SIZE='"${THREADS}"' ./miner --dumb --pool='"${POOL}"' --miner='"${THREADS}"' --wallet-address="'"${WALLET}"'" --extra-data="'"${EXTRADATA}"'" --statistics='"${STATISTICS}"'' > start
     chmod u+x start
@@ -91,4 +44,4 @@ displayErr() {
     output "Run the below command to automate the process of editing the start file."
     output "bash -c "'"$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"'""
     output " "
-	sleep 3
+    sleep 3

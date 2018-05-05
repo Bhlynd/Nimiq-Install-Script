@@ -1,9 +1,8 @@
-# Nimiq Client install script
+# Nimiq Client Install Script
 
 ## Windows with Subsystem for Linux
 
 Follow the below guide to install the Windows Subsystem for Linux (Ubuntu). 
-This script has NOT been tested on a clean Ubuntu install but will likely work.
 
 https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
@@ -25,13 +24,19 @@ or
 
 bash -c "$(wget -O - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
 
-Please note, during the installation process the script will request you to enter settings for the client and to run escalated priviliges (sudo).
+Please note, during the installation process the script will request you to enter settings for the client and to run escalated privileges (sudo).
 
 **DO NOT RUN THIS AS ROOT**
 
-When complete, you can start the Nimiq mining client by typing **./start**.
+When completed, you can start the Nimiq mining client by typing **./start**. To exit the miner press **Ctrl-C**.
 
 If you need to change any settings, you can do this by editing the start file.
+
+OR
+
+Run the below command to automate the process of editing the start file.
+
+bash -c "$(curl -o - https://raw.githubusercontent.com/Bhlynd/Nimiq-Install-Script/master/nimiq-client-install.sh)"
 
 Have fun :)
 
@@ -41,7 +46,7 @@ Have fun :)
 
 ## Donations
 
-If this script was useful please make a donation to the below addresses.
+If this script was useful and you want to make a donation, feel free to send your NIM donation to the below NIM wallets.
 
 @Bhlynd NQ84 GF4Y PJJQ S92K 3S9L 39N1 V2QE 76EJ 0635
 
