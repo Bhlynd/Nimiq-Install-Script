@@ -17,14 +17,14 @@ displayErr() {
 }
 
     output " "
-    output "Make sure you double check before hitting enter! Only one shot at these!"
-    output "You will find examples in the brackets."
+    output "Please double check before hitting enter! You only have one shot at these!"
+    output "A reconfigure script is included if you make a mistake."
     output " "
     read -e -p "Enter the pool URL: " -i "au.porkypool.com:8444" POOL
     read -e -p "Enter the miner CPU threads: " -i $(getconf _NPROCESSORS_ONLN) THREADS
     read -e -p "Enter your wallet address: " WALLET
     read -e -p "Enter device name: " EXTRADATA
-    read -e -p "Enter statistics interval in seconds: " -i "10000" STATISTICS
+    read -e -p "Enter statistics interval in seconds: " -i "15" STATISTICS
     
     output " "
     output "Making sure everything is up to date."
@@ -82,8 +82,10 @@ displayErr() {
     UV_THREADPOOL_SIZE='"${THREADS}"' ./miner --dumb --pool='"${POOL}"' --miner='"${THREADS}"' --wallet-address="'"${WALLET}"'" --extra-data="'"${EXTRADATA}"'" --statistics='"${STATISTICS}"'' > start
     chmod u+x start
 
+    output "Congratulationts! If everything went well you can now start mining."
     output " "
-    output "You can start the miner by typing ./start"
+    output "To start the miner type ./start"
+    output " "
     output "If you need to change any settings, you can do so by editing the start file."
     output ""
     output "OR"

@@ -1,5 +1,10 @@
 # Nimiq Client Install Script
 
+## Tested on
+
+Ubuntu 16.04 (Xenial)
+Debian 9 (Stretch)
+
 ## Windows with Subsystem for Linux
 
 Follow the below guide to install the Windows Subsystem for Linux (Ubuntu). 
